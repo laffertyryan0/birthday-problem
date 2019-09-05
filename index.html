@@ -1,0 +1,30 @@
+<html>
+ <head>
+  </head>
+  <body>
+    <form>
+      <input type="number" id = "input">
+      <input type="button"
+        id = "mybutton"
+        onclick = "updateVal()"
+        value = "Submit">
+    </form>
+   <p id = "ans">
+     Enter a number k above to compute the probability that at least two people
+     will share a birthday in a room with k people.
+   </p>
+   <script src = Birthday.js></script>
+   <script>
+   function updateVal(){
+     var num = document.getElementById("input").value;
+     var persontext = " people";
+     if(num == 1){
+       persontext = " person";
+     }
+     document.getElementById("ans").innerHTML = "In a room with " + num +
+     persontext + ", the probability that at least two will share a birthday is " +
+        getProb(num) + ".";
+   }
+   </script>
+ </body>
+</html>
